@@ -11,10 +11,16 @@
   :version "0.1.0"
   :author "Windymelt"
   :license "Apache License 2.0"
-  :depends-on ()
+  :depends-on (:dexador :rutils :cl-json :cl-annot)
+  :serial t
   :components ((:module "src"
                 :components
-                ((:file "cl-github"))))
+                ((:file "package")
+                 (:file "connection")
+                 (:file "github")
+                 (:file "api-events")
+                 (:file "api-feeds")
+                 (:file "api-notifications"))))
   :description ""
   :long-description
   #.(read-file-string
