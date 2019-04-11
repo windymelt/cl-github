@@ -23,7 +23,8 @@
             "")
 
 (define-api list-public-org-events (org) ()
-            :get "/orgs/~A/events")
+            :get "/orgs/~A/events"
+            "")
 
 (define-api list-user-received-events (username) ()
             :get "/users/~A/received_events"
