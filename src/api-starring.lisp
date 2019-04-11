@@ -10,11 +10,11 @@
             :get "/repos/~A/~A/stargazers"
             "")
 
-(define-api list-starred-repos (username) (sort direction)
+(define-api list-starred-repos (username) (&key (sort "created") (direction "desc"))
             :get "/users/~A/starred"
             "")
 
-(define-api list-user-starred-repos () (sort direction)
+(define-api list-user-starred-repos () (&key (sort "created") (direction "desc"))
             :get "/user/starred"
             "")
 

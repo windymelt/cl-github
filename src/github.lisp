@@ -17,6 +17,8 @@
 (defparameter *cmd-prefix* 'gh
   "Prefix for functions names that implement github commands.")
 
+;; TODO: cl-json false handler
+
 (eval-always
   (defun extract-arg-names (arglist
                             &aux
@@ -38,7 +40,7 @@
 processing a GitHub command CMD."
   (let ((cmd-name (intern (fmt "~:@(~A-~A~)" *cmd-prefix* cmd))))
     `(eval-always
-       (defun ,cmd ,(concatenate 'list pathparams args)
+       (defun ,cmd ,(concatenate 'list pathparams args) ;; TODO: detect params provided or not
          ,docstring
          (cl-json:decode-json
           (labels ((args-to-query (actual-args)
