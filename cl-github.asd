@@ -20,7 +20,8 @@
                  (:file "github")
                  (:file "api-events")
                  (:file "api-feeds")
-                 (:file "api-notifications"))))
+                 (:file "api-notifications")
+                 (:file "api-starring"))))
   :description ""
   :long-description
   #.(read-file-string
