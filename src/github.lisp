@@ -62,7 +62,9 @@ processing a GitHub command CMD."
              :method ,method
              :headers `(("Content-Type" . "application/json")
                         ("Accept" . "application/vnd.github.v3+json")); todo Authorization header for OAuth2
-             :content (args-to-content (list ,@(extract-arg-names args)))
+             ,@(when (or (eq method :post)
+                         (eq method :put))
+                 `(:content (args-to-content (list ,@(extract-arg-names args)))))
              :want-stream t
              :basic-auth (conn-basic-auth *connection*)
              :insecure (conn-insecure *connection*)
