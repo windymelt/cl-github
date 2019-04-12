@@ -49,7 +49,7 @@
                   (root "")
                   (use-tls t)
                   oauth-token
-                  basic-auth
+                  basic-auth-pair
                   (insecure nil))
   "Connect to GitHub/GHE server."
   (when (connected-p)
@@ -66,7 +66,7 @@
                                     :root root
                                     :use-tls-p use-tls
                                     :oauth-token oauth-token
-                                    :basic-auth basic-auth
+                                    :basic-auth basic-auth-pair
                                     :insecure insecure)))
 
 @export
@@ -82,7 +82,7 @@
                               (root "")
                               (use-tls t)
                               oauth-token
-                              basic-auth
+                              basic-auth-pair
                               (insecure nil))
                            &body body)
   "Evaluate BODY with the current connection bound to a new connection specified by the given HOST and PORT"
@@ -92,7 +92,7 @@
                                        :root ,root
                                        :use-tls-p ,use-tls
                                        :oauth-token ,oauth-token
-                                       :basic-auth ,basic-auth
+                                       :basic-auth ,basic-auth-pair
                                        :insecure ,insecure)))
      (unwind-protect
           (progn ,@body)
