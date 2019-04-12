@@ -21,7 +21,8 @@
                  (:file "api-events")
                  (:file "api-feeds")
                  (:file "api-notifications")
-                 (:file "api-starring"))))
+                 (:file "api-starring")
+                 (:file "api-watching"))))
   :description ""
   :long-description
   #.(read-file-string
